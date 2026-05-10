@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>For Mom 🤍</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Quicksand:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    min-height:100vh;
+    font-family:'Quicksand', sans-serif;
+
+    background:
+    repeating-linear-gradient(
+        to bottom,
+        #f7f5ef,
+        #f7f5ef 34px,
+        #c9d8e8 35px,
+        #f7f5ef 36px
+    );
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:18px;
+
+    overflow-x:hidden;
+}
+
+.container{
+    width:100%;
+    max-width:430px;
+
+    background:rgba(255,255,255,0.92);
+
+    border-radius:28px;
+
+    padding:24px;
+
+    border:2px dashed #a8bfd3;
+
+    box-shadow:0 12px 35px rgba(0,0,0,0.14);
+
+    position:relative;
+
+    animation:fadeUp 1s ease;
+}
+
+.tape{
+    width:110px;
+    height:28px;
+
+    background:rgba(198,214,228,0.7);
+
+    position:absolute;
+    top:-12px;
+    left:50%;
+
+    transform:translateX(-50%) rotate(-2deg);
+
+    border-radius:8px;
+}
+
+h1{
+    font-family:'Patrick Hand', cursive;
+    font-size:2.8rem;
+    text-align:center;
+    color:#5d7991;
+    margin-top:12px;
+}
+
+.subtitle{
+    text-align:center;
+    color:#666;
+    margin:10px 0 24px;
+    line-height:1.6;
+    font-size:0.98rem;
+}
+
+.question-box{
+    background:#fffdfa;
+
+    border-radius:22px;
+
+    padding:22px;
+
+    border:2px dashed #bfd0df;
+
+    text-align:center;
+}
+
+.question{
+    font-size:1.7rem;
+    color:#51697d;
+    margin-bottom:16px;
+    font-weight:700;
+}
+
+input{
+    width:140px;
+
+    padding:12px;
+
+    border-radius:14px;
+
+    border:2px solid #a9c0d7;
+
+    outline:none;
+
+    text-align:center;
+
+    font-size:1rem;
+
+    background:white;
+}
+
+button{
+    margin-top:18px;
+
+    border:none;
+
+    padding:13px 24px;
+
+    border-radius:16px;
+
+    background:#7898b6;
+
+    color:white;
+
+    font-size:1rem;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:0.3s;
+}
+
+button:hover{
+    transform:scale(1.05);
+    background:#5f84a8;
+}
+
+.message{
+    margin-top:12px;
+    color:#777;
+}
+
+.photo-card{
+    margin-top:28px;
+
+    background:white;
+
+    padding:14px 14px 24px;
+
+    border-radius:24px;
+
+    transform:rotate(-1deg);
+
+    box-shadow:0 10px 25px rgba(0,0,0,0.15);
+
+    animation:popIn 0.8s ease;
+}
+
+.photo{
+    width:100%;
+    border-radius:18px;
+}
+
+.caption{
+    margin-top:12px;
+    font-family:'Patrick Hand', cursive;
+    color:#5c5c5c;
+    font-size:1.2rem;
+}
+
+.letter{
+    margin-top:32px;
+
+    background:#fffdfa;
+
+    border:2px dashed #bfd0df;
+
+    border-radius:24px;
+
+    padding:28px;
+
+    font-family:'Patrick Hand', cursive;
+
+    line-height:1.9;
+
+    font-size:1.25rem;
+
+    color:#505050;
+
+    animation:fadeUp 1s ease;
+}
+
+.signature{
+    margin-top:20px;
+    font-size:1.4rem;
+}
+
+.hidden{
+    display:none;
+}
+
+.floating-heart{
+    position:fixed;
+    font-size:24px;
+    animation:floatUp 4s linear infinite;
+    opacity:0.7;
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes popIn{
+    from{
+        opacity:0;
+        transform:scale(0.8) rotate(-4deg);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1) rotate(-1deg);
+    }
+}
+
+@keyframes floatUp{
+
+    0%{
+        transform:translateY(100vh);
+        opacity:0;
+    }
+
+    20%{
+        opacity:0.7;
+    }
+
+    100%{
+        transform:translateY(-120vh);
+        opacity:0;
+    }
+}
+
+@media(max-width:480px){
+
+    h1{
+        font-size:2.3rem;
+    }
+
+    .question{
+        font-size:1.5rem;
+    }
+
+    .letter{
+        font-size:1.15rem;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<audio autoplay loop>
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<div class="container">
+
+<div class="tape"></div>
+
+<h1>Happy Mother's Day 🤍</h1>
+
+<p class="subtitle">
+Solve each little math question to unlock our memories ✨
+</p>
+
+<div class="question-box" id="quizBox">
+
+<div class="question" id="question"></div>
+
+<input type="number" id="answer" placeholder="Answer">
+
+<br>
+
+<button onclick="checkAnswer()">
+Reveal Memory
+</button>
+
+<div class="message" id="message"></div>
+
+</div>
+
+<div id="gallery"></div>
+
+</div>
+
+<script>
+
+const photos = [
+    "photo1.jpg",
+    "photo2.jpg",
+    "photo3.jpg",
+    "photo4.jpg",
+    "photo5.jpg"
+];
+
+const captions = [
+    "Forever my safe place 🤍",
+    "My favourite memories are with you ✨",
+    "You make every moment brighter 🌸",
+    "Adventures are better with mom 🌊",
+    "My biggest blessing 🤍"
+];
+
+const questions = [
+
+{ q:"8 + 5 = ?", a:13 },
+{ q:"9 × 4 = ?", a:36 },
+{ q:"48 ÷ 6 = ?", a:8 },
+{ q:"15 + 12 = ?", a:27 },
+{ q:"7 × 7 = ?", a:49 }
+
+];
+
+let current = 0;
+
+const questionEl = document.getElementById("question");
+const answerEl = document.getElementById("answer");
+const messageEl = document.getElementById("message");
+const galleryEl = document.getElementById("gallery");
+
+function loadQuestion(){
+    questionEl.innerText = questions[current].q;
+}
+
+loadQuestion();
+
+function checkAnswer(){
+
+    const userAnswer = Number(answerEl.value);
+
+    if(userAnswer === questions[current].a){
+
+        messageEl.innerText = "";
+
+        revealPhoto();
+
+        current++;
+
+        answerEl.value = "";
+
+        if(current < questions.length){
+            loadQuestion();
+        }
+
+        else{
+
+            document.getElementById("quizBox")
+            .classList.add("hidden");
+
+            showLetter();
+            createHearts();
+        }
+
+    }
+
+    else{
+        messageEl.innerText = "Oops! Try again ✏️";
+    }
+}
+
+function revealPhoto(){
+
+    const card = document.createElement("div");
+    card.classList.add("photo-card");
+
+    card.innerHTML = `
+        <img src="${photos[current]}" class="photo">
+        <div class="caption">${captions[current]}</div>
+    `;
+
+    galleryEl.appendChild(card);
+}
+
+function showLetter(){
+
+    galleryEl.innerHTML += `
+
+    <div class="letter">
+
+    🤍<br><br>
+
+    I just wanted to tell you how grateful I am to have you in my life.
+    Thank you for always supporting me, caring for me, and loving me no matter what.
+    Your kindness, strength, and sacrifices mean more to me than words can explain.
+    You make my life brighter every single day, and I feel lucky to call you my mother.
+    I hope you always know how much I love and appreciate you.
+
+    <div class="signature">
+    With lots of love,<br>
+    Gargee
+    </div>
+
+    </div>
+    `;
+}
+
+function createHearts(){
+
+    for(let i=0; i<20; i++){
+
+        const heart = document.createElement("div");
+
+        heart.classList.add("floating-heart");
+
+        heart.innerHTML = "🤍";
+
+        heart.style.left = Math.random()*100 + "vw";
+
+        heart.style.animationDuration =
+        (Math.random()*3 + 3) + "s";
+
+        document.body.appendChild(heart);
+    }
+}
+
+</script>
+
+</body>
+</html>
